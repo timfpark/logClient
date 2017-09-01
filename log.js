@@ -61,7 +61,7 @@ module.exports = function(source, path) {
 
         stream: {
             write: function(log, encoding) {
-                queueLog('info', tag, log);
+                queueLog('info', source, path, log);
             }
         }
     };
