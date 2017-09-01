@@ -28,6 +28,7 @@ function queueLog(severity, source, path, log) {
 
     let logObject = {
         severity,
+        source,
         tags,
         log,
         timestamp: Date.now()
