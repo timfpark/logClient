@@ -28,6 +28,7 @@ function queueLog(severity, source, path, log) {
 
     let logObject = {
         severity,
+        tier: process.env.LOG_TIER,
         source,
         tags,
         log,
