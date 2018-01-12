@@ -1,17 +1,17 @@
 {
   "name": "logclient",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "",
   "main": "log.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --exit"
   },
   "author": "timfpark@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.81.0"
+    "request": "^2.83.0"
   },
   "devDependencies": {
-    "mocha": "^3.5.0"
+    "mocha": "^4.1.0"
   }
 }
