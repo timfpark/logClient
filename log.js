@@ -31,9 +31,10 @@ class Log {
         }, LOG_POST_INTERVAL);
     }
 
-    clone(id) {
+    clone(path) {
         return new Log({
-            id,
+            source: this.source,
+            path,
             severity: this.severity
         });
     }
@@ -59,7 +60,7 @@ class Log {
     }
 
     log(severity, message) {
-        console.log(`${new Date().toISOString()}: ${severity}: ${this.id}: ${message}`);
+        console.log(`${new Date().toISOString()}: ${severity}: ${this.path}: ${message}`);
         this.queue({
             severity,
             tier: process.env.LOG_TIER,
