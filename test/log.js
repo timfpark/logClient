@@ -1,13 +1,8 @@
 "use strict";
 
 const assert = require("assert"),
-    Log = require("../log.js");
-
-let log = new Log({
-    severity: "info",
-    source: "testService",
-    path: "test/path"
-});
+    Log = require("../log"),
+    log = new Log("test/path");
 
 describe("log client", function() {
     it("can create log", function(done) {
