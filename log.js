@@ -1,27 +1,29 @@
 class Log {
     constructor(path) {
         this.path = path;
+
+        this.severity = process.env.LOG_SEVERITY || 'info';
     }
 
     debug(message) {
-        if (["debug"].indexOf(process.env.LOG_SEVERITY) !== -1)
+        if (["debug"].indexOf(this.severity) !== -1)
             this.log("DEBUG", message);
     }
 
     info(message) {
-        if (["debug", "info"].indexOf(process.env.LOG_SEVERITY) !== -1)
+        if (["debug", "info"].indexOf(this.severity) !== -1)
             this.log("INFO", message);
     }
 
     warn(message) {
-        if (["debug", "info", "warn"].indexOf(process.env.LOG_SEVERITY) !== -1)
+        if (["debug", "info", "warn"].indexOf(this.severity) !== -1)
             this.log("WARN", message);
     }
 
     error(message) {
         if (
             ["debug", "info", "warn", "error"].indexOf(
-                process.env.LOG_SEVERITY
+                this.severity 
             ) !== -1
         )
             this.log("ERROR", message);
