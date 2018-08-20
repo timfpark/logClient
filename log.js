@@ -30,7 +30,7 @@ class Log {
     }
 
     log(severity, message) {
-        console.log(`${severity}: ${this.path}: ${message}`);
+        console.log(`${new Date().toISOString()}: ${severity}: ${this.path}: ${message}`);
     }
 }
 
